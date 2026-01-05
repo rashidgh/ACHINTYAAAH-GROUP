@@ -14,33 +14,52 @@ export default function Navbar() {
   const [active, setActive] = useState("#home");
 
   // Sync active menu with URL hash
-  useEffect(() => {
-    const currentHash = window.location.hash || "#home";
-    setActive(currentHash);
+  // useEffect(() => {
+  //   const currentHash = window.location.hash || "#home";
+  //   setActive(currentHash);
 
-    const onHashChange = () => {
-      setActive(window.location.hash || "#home");
-    };
+  //   const onHashChange = () => {
+  //     setActive(window.location.hash || "#home");
+  //   };
 
-    window.addEventListener("hashchange", onHashChange);
-    return () => window.removeEventListener("hashchange", onHashChange);
-  }, []);
+  //   window.addEventListener("hashchange", onHashChange);
+  //   return () => window.removeEventListener("hashchange", onHashChange);
+  // }, []);
 
   const handleClick = (hash) => {
     setActive(hash);
     setOpen(false);
-    window.location.hash = hash;
+
+    const el = document.querySelector(hash);
+    if (el) {
+      el.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
   };
+
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-slate-900/90 backdrop-blur text-white">
       <div className="max-w-7xl mx-auto px-2 h-16 flex items-center justify-between">
 
         {/* Logo */}
-        <div className="flex items-center gap-2 text-lg font-bold">
+        <div
+          onClick={() => {
+            setActive("#home");
+            document.querySelector("#home")?.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }}
+          className="flex items-center gap-2 text-lg font-bold cursor-pointer"
+        >
           <img src="/logo.jpeg" alt="Logo" width={40} height={40} />
           ACHINTYAAAH <span className="text-sky-400">GROUP</span>
         </div>
+
+
 
 
         {/* Desktop Menu */}
@@ -49,7 +68,7 @@ export default function Navbar() {
             <button
               key={item.hash}
               onClick={() => handleClick(item.hash)}
-              className={`relative text-sm font-medium transition
+              className={`relative cursor-pointer text-sm font-medium transition
                 ${active === item.hash ? "text-sky-400" : "text-white"}
               `}
             >
