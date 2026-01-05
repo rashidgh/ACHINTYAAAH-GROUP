@@ -11,12 +11,12 @@ export default function ServiceCard({ icon: Icon, title, description, index }) {
       className="group cursor-pointer"
     >
       {/* Icon */}
-      <div className="w-14 h-14 mb-4 rounded-full bg-emerald-400 flex items-center justify-center">
+      <div className="w-14 h-14 mb-4 rounded-full bg-sky-500 flex items-center justify-center">
         <Icon size={26} className="text-black" />
       </div>
 
       {/* Title */}
-      <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-emerald-400 transition">
+      <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-sky-400 transition">
         {title}
       </h3>
 

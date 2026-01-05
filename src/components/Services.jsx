@@ -53,7 +53,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="bg-black py-24 px-6 text-white"
+      className="bg-slate-900/90 py-24 px-6 text-white"
     >
       {/* Heading */}
       <motion.div
@@ -64,7 +64,7 @@ export default function Services() {
         className="max-w-3xl mx-auto text-center mb-20"
       >
         <h2 className="text-4xl font-bold mb-4">
-          Our <span className="text-emerald-400">Services</span>
+          Our <span className="text-sky-500">Services</span>
         </h2>
         <p className="text-gray-400">
           We work small but think big, delivering scalable, secure and innovative
