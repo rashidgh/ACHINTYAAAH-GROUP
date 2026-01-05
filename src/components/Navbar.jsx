@@ -34,12 +34,14 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-slate-900/90 backdrop-blur text-white">
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-2 h-16 flex items-center justify-between">
 
         {/* Logo */}
-        <div className="text-xl font-bold">
+        <div className="flex items-center gap-2 text-lg font-bold">
+          <img src="/logo.jpeg" alt="Logo" width={40} height={40} />
           ACHINTYAAAH <span className="text-sky-400">GROUP</span>
         </div>
+
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
