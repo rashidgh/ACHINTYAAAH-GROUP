@@ -1,9 +1,10 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { motion } from "framer-motion";
 
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation"; // ✅ Import navigation styles
 import AnimatedText from "./AnimatedText";
 
 const slides = [
@@ -29,9 +30,10 @@ export default function HeroCarousel() {
     <div className="pt-16 w-full" id="home">
       <div className="h-[70vh] relative overflow-hidden">
         <Swiper
-          modules={[Autoplay, Pagination]}
+          modules={[Autoplay, Pagination, Navigation]} // ✅ Add Navigation module
           autoplay={{ delay: 5000, disableOnInteraction: false }}
           pagination={{ clickable: true }}
+          navigation // ✅ Enable arrows
           loop
           className="h-full"
         >
