@@ -1,0 +1,104 @@
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
+
+const navItems = [
+  { label: "Home", hash: "#home" },
+  { label: "Services", hash: "#services" },
+  { label: "About", hash: "#about" },
+  { label: "Contact", hash: "#contact" },
+];
+
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("#home");
+
+  // Sync active menu with URL hash
+  useEffect(() => {
+    const currentHash = window.location.hash || "#home";
+    setActive(currentHash);
+
+    const onHashChange = () => {
+      setActive(window.location.hash || "#home");
+    };
+
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+  }, []);
+
+  const handleClick = (hash) => {
+    setActive(hash);
+    setOpen(false);
+    window.location.hash = hash;
+  };
+
+  return (
+    <nav className="fixed top-0 left-0 w-full z-50 bg-slate-900/90 backdrop-blur text-white">
+      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+
+        {/* Logo */}
+        <div className="text-xl font-bold">
+          ACHINTYAAAH <span className="text-sky-400">GROUP</span>
+        </div>
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center space-x-8">
+          {navItems.map((item) => (
+            <button
+              key={item.hash}
+              onClick={() => handleClick(item.hash)}
+              className={`relative text-sm font-medium transition
+                ${active === item.hash ? "text-sky-400" : "text-white"}
+              `}
+            >
+              {item.label}
+
+              {active === item.hash && (
+                <motion.span
+                  layoutId="activeLink"
+                  className="absolute left-0 -bottom-1 w-full h-[2px] bg-sky-400"
+                />
+              )}
+            </button>
+          ))}
+        </div>
+
+        {/* Mobile Icon */}
+        <button className="md:hidden" onClick={() => setOpen(true)}>
+          <Menu size={26} />
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            className="fixed top-0 right-0 h-screen w-4/5 bg-slate-950 p-6"
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ duration: 0.4 }}
+          >
+            <div className="flex justify-end mb-8">
+              <X size={28} onClick={() => setOpen(false)} />
+            </div>
+
+            <div className="flex flex-col space-y-6">
+              {navItems.map((item) => (
+                <button
+                  key={item.hash}
+                  onClick={() => handleClick(item.hash)}
+                  className={`text-lg text-left font-medium
+                    ${active === item.hash ? "text-sky-400" : "text-white"}
+                  `}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
+  );
+}
