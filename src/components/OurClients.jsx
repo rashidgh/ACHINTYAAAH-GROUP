@@ -1,13 +1,7 @@
 import { motion } from "framer-motion";
 import ClientLogo from "./ClientLogo";
+import { clients } from "../data/client";
 
-const clients = [
-  { src: "https://img-cdn.publive.online/fit-in/640x430/filters:format(webp)/dq/media/media_files/KMnzXc2TTiNaIwURgard.png", name: "Client 1" },
-  { src: "https://www.capgemini.com/au-en/wp-content/uploads/sites/10/2023/05/Capgemini.png", name: "INT" },
-  { src: "https://etimg.etb2bimg.com/photo/111601246.cms", name: "Tech Mahindra" },
-  { src: "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/3468188/DSCF1179.0.jpg?quality=90&strip=all&crop=0,0,100,100", name: "Infosys" },
-  { src: "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202502/apple-launches-144212375-16x9_0.jpg?VersionId=wrXj8T4VjRsYqmW88_Zmslhv8eKu98wy", name: "Techved" },
-];
 
 export default function OurClients() {
   return (

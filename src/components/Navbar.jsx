@@ -13,19 +13,6 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("#home");
 
-  // Sync active menu with URL hash
-  // useEffect(() => {
-  //   const currentHash = window.location.hash || "#home";
-  //   setActive(currentHash);
-
-  //   const onHashChange = () => {
-  //     setActive(window.location.hash || "#home");
-  //   };
-
-  //   window.addEventListener("hashchange", onHashChange);
-  //   return () => window.removeEventListener("hashchange", onHashChange);
-  // }, []);
-
   const handleClick = (hash) => {
     setActive(hash);
     setOpen(false);
@@ -55,8 +42,8 @@ export default function Navbar() {
           }}
           className="flex items-center gap-2 text-lg font-bold cursor-pointer"
         >
-          <img src="/logo.jpeg" alt="Logo" width={40} height={40} />
-          ACHINTYAAAH <span className="text-sky-400">GROUP</span>
+          <img className="rounded-full" src="/logo.jpeg" alt="Logo" width={36} height={36} />
+          ACHINTYAAAH <span className="text-indigo-400">GROUP</span>
         </div>
 
 
@@ -69,7 +56,7 @@ export default function Navbar() {
               key={item.hash}
               onClick={() => handleClick(item.hash)}
               className={`relative cursor-pointer text-sm font-medium transition
-                ${active === item.hash ? "text-sky-400" : "text-white"}
+                ${active === item.hash ? "text-indigo-400" : "text-white"}
               `}
             >
               {item.label}
@@ -77,7 +64,7 @@ export default function Navbar() {
               {active === item.hash && (
                 <motion.span
                   layoutId="activeLink"
-                  className="absolute left-0 -bottom-1 w-full h-[2px] bg-sky-400"
+                  className="absolute left-0 -bottom-1 w-full h-[2px] bg-indigo-400"
                 />
               )}
             </button>
@@ -110,7 +97,7 @@ export default function Navbar() {
                   key={item.hash}
                   onClick={() => handleClick(item.hash)}
                   className={`text-lg text-left font-medium
-                    ${active === item.hash ? "text-sky-400" : "text-white"}
+                    ${active === item.hash ? "text-indigo-400" : "text-white"}
                   `}
                 >
                   {item.label}

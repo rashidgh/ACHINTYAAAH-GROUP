@@ -6,29 +6,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation"; // ✅ Import navigation styles
 import AnimatedText from "./AnimatedText";
-
-const slides = [
-  {
-    title: "IT Solutions for Modern Business",
-    desc: "We build scalable, secure and high-performance digital products.",
-    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
-  },
-  {
-    title: "Web & Mobile App Development",
-    desc: "Custom applications tailored to your business needs.",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
-  },
-  {
-    title: "Cloud & Enterprise Services",
-    desc: "Transform your infrastructure with cloud-ready solutions.",
-    image: "https://images.unsplash.com/photo-1556761175-4b46a572b786",
-  },
-];
+import { heroSlides } from "../data/heroSlides";
 
 export default function HeroCarousel() {
   return (
     <div className="pt-16 w-full" id="home">
-      <div className="h-[70vh] relative overflow-hidden">
+      <div className="relative overflow-hidden h-[50vh] sm:h-[60vh] md:h-[70vh]">
         <Swiper
           modules={[Autoplay, Pagination, Navigation]} // ✅ Add Navigation module
           autoplay={{ delay: 5000, disableOnInteraction: false }}
@@ -37,7 +20,7 @@ export default function HeroCarousel() {
           loop
           className="h-full"
         >
-          {slides.map((slide, index) => (
+          {heroSlides.map((slide, index) => (
             <SwiperSlide key={index}>
               <div
                 className="relative h-full w-full bg-cover bg-center flex items-center justify-center"
@@ -66,15 +49,6 @@ export default function HeroCarousel() {
                     text={slide.desc}
                     className="block text-base sm:text-lg md:text-xl text-gray-200 mb-6"
                   />
-
-                  {/* <motion.button
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5, duration: 0.8 }}
-                    className="px-5 py-2 sm:px-6 sm:py-3 bg-sky-500 hover:bg-sky-600 text-white rounded-lg shadow-lg transition text-sm sm:text-base"
-                  >
-                    Get Started
-                  </motion.button> */}
                 </motion.div>
               </div>
             </SwiperSlide>

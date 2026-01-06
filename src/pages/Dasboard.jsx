@@ -5,6 +5,7 @@ import Services from '../components/Services'
 import ContactUs from '../components/ContactUs'
 import OurClients from '../components/OurClients'
 import AboutUs from '../components/AboutUs'
+import ScrollToTop from '../components/ScrollToTop'
 
 const Dasboard = () => {
     return (
@@ -15,6 +16,7 @@ const Dasboard = () => {
             <Services/>
             <AboutUs/>
             <ContactUs/>
+            <ScrollToTop/>
         </div>
     )
 }

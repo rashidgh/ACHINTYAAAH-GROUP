@@ -36,7 +36,7 @@ export default function ContactUs() {
                 transition={{ duration: 0.6 }}
                 className="text-4xl font-bold mb-16"
             >
-                Contact <span className="text-sky-500">Us.</span>
+                Contact <span className="text-indigo-400">Us.</span>
             </motion.h2>
 
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
