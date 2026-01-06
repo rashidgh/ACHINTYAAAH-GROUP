@@ -6,7 +6,24 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation"; // ✅ Import navigation styles
 import AnimatedText from "./AnimatedText";
-import { heroSlides } from "../data/heroSlides";
+
+const slides = [
+  {
+    title: "IT Solutions for Modern Businessss",
+    desc: "We build scalable, secure and high-performance digital products.",
+    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
+  },
+  {
+    title: "Web & Mobile App Development",
+    desc: "Custom applications tailored to your business needs.",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+  },
+  {
+    title: "Cloud & Enterprise Services",
+    desc: "Transform your infrastructure with cloud-ready solutions.",
+    image: "https://images.unsplash.com/photo-1556761175-4b46a572b786",
+  },
+];
 
 export default function HeroCarousel() {
   return (
@@ -20,7 +37,7 @@ export default function HeroCarousel() {
           loop
           className="h-full"
         >
-          {heroSlides.map((slide, index) => (
+          {slides.map((slide, index) => (
             <SwiperSlide key={index}>
               <div
                 className="relative h-full w-full bg-cover bg-center flex items-center justify-center"

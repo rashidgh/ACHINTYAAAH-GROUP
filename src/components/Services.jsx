@@ -28,7 +28,7 @@ export default function Services() {
         className="max-w-3xl mx-auto text-center mb-20"
       >
         <h2 className="text-4xl font-bold mb-4">
-          Our <span className="text-sky-500">Services</span>
+          Our <span className="text-indigo-400">Services</span>
         </h2>
         <p className="text-gray-400">
           We work small but think big, delivering scalable, secure and innovative
