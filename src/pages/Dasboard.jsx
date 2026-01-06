@@ -11,7 +11,7 @@ const Dasboard = () => {
     return (
         <div>
             <Navbar />
-            <HeroCarousel/>
+            {/* <HeroCarousel/> */}
             <OurClients/>
             <Services/>
             <AboutUs/>
