@@ -19,10 +19,9 @@ export default function AboutUs() {
   return (
     <section
       id="about"
-      className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-black text-white overflow-hidden"
+      className="relative  text-white overflow-hidden"
     >
       {/* BACKGROUND DECOR */}
-      <div className="absolute -top-32 -left-32 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl" />
       <div className="absolute top-1/3 -right-32 w-96 h-96 bg-sky-500/20 rounded-full blur-3xl" />
 
       {/* HERO */}

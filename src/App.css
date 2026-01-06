@@ -1,8 +1,6 @@
 @import "tailwindcss";
-body{
-    background: #0f172a;
-}
 /* Force smaller Swiper arrows */
+
 .swiper-button-next,
 .swiper-button-prev {
   width: 28px !important;

@@ -17,7 +17,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="bg-slate-900/90 py-24 px-6 text-white"
+      className="py-24 px-6 text-white"
     >
       {/* Heading */}
       <motion.div

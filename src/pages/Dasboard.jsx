@@ -9,7 +9,7 @@ import ScrollToTop from '../components/ScrollToTop'
 
 const Dasboard = () => {
     return (
-        <div>
+        <div className='bg-gradient-to-b from-slate-950 via-slate-900 to-black'>
             <Navbar />
             <HeroCarousel/>÷
             <OurClients/>

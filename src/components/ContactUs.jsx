@@ -26,7 +26,7 @@ export default function ContactUs() {
     return (
         <section
             id="contact"
-            className="relative min-h-screen bg-slate-900/90  text-white px-6 py-24 overflow-hidden"
+            className="relative min-h-screen  text-white px-6 py-24 overflow-hidden"
         >
             {/* Header */}
             <motion.h2

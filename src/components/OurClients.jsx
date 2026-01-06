@@ -5,7 +5,7 @@ import { clients } from "../data/client";
 
 export default function OurClients() {
   return (
-    <section className="py-24 bg-slate-900/90 overflow-hidden">
+    <section className="py-24  overflow-hidden mt-[-24px] ">
       {/* Title */}
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
