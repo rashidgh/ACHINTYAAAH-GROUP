@@ -6,6 +6,7 @@ import ContactUs from '../components/ContactUs'
 import OurClients from '../components/OurClients'
 import AboutUs from '../components/AboutUs'
 import ScrollToTop from '../components/ScrollToTop'
+import Footer from '../components/Footer'
 
 const Dasboard = () => {
     return (

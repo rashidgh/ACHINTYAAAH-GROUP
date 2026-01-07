@@ -22,14 +22,14 @@ export default function AboutUs() {
       className="relative  text-white overflow-hidden"
     >
       {/* BACKGROUND DECOR */}
-      <div className="absolute top-1/3 -right-32 w-96 h-96 bg-sky-500/20 rounded-full blur-3xl" />
+      <div className="absolute top-1/3 -right-32 w-96 h-96 rounded-full blur-3xl" />
 
       {/* HERO */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="relative py-28 text-center"
+        className="relative py-10 text-center"
       >
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
           About <span className="text-indigo-400">Achintyaah</span>
