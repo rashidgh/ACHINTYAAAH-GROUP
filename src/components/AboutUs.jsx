@@ -49,7 +49,7 @@ export default function AboutUs({ theme }) {
       <div className="relative max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         {/* IMAGE */}
         <div
-          data-aos={window.innerWidth >= 768 ? "zoom-in" : "fade-right"}
+          data-aos={window.innerWidth >= 768 ? "zoom-in" : "fade-left"}
           className={`relative group rounded-2xl overflow-hidden transition-all duration-300 ${
             isDay
               ? "border border-slate-200 shadow-lg hover:shadow-xl"
@@ -68,7 +68,7 @@ export default function AboutUs({ theme }) {
 
         {/* TEXT */}
         <div
-          data-aos={window.innerWidth >= 768 ? "zoom-in" : "fade-right"}
+          data-aos={window.innerWidth >= 768 ? "zoom-in" : "fade-left"}
           className=""
         >
           <h2 className="text-3xl font-bold mb-6">

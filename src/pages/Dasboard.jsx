@@ -13,7 +13,7 @@ const Dashboard = () => {
 
   return (
     <div
-      className={`min-h-screen transition-colors duration-300 ${
+      className={`min-h-screen w-screen transition-colors duration-300 ${
         theme === "night"
           ? "bg-gradient-to-b from-slate-950 via-slate-900 to-black text-white"
           : "bg-white text-black"

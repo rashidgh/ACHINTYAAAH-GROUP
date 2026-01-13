@@ -31,7 +31,7 @@ export default function Navbar({ theme, setTheme }) {
   return (
     <nav
       className={`
-        fixed top-0 left-0 w-full z-50 transition-colors duration-300
+        fixed top-0 left-0 z-50 transition-colors duration-300 w-screen
         ${isNight ? "bg-[#0B0F1A]/90 text-white backdrop-blur-lg" : "bg-white/90 text-gray-800 backdrop-blur-md shadow-md"}
       `}
     >
@@ -109,9 +109,9 @@ export default function Navbar({ theme, setTheme }) {
             exit={{ x: "110%", opacity: 0 }}
             transition={{ duration: 0.35, ease: "easeOut" }}
             className={`
-              fixed top-0 right-0 h-screen w-[85%] p-6 overflow-y-auto transition-colors duration-300
+              fixed top-0 right-0 h-screen  p-6 overflow-y-auto transition-colors duration-300 z-50
               ${isNight ? "bg-[#0B0F1A] text-white" : "bg-white text-gray-800"}
-              shadow-2xl border-l ${isNight ? "border-white/10" : "border-gray-200"}
+              shadow-2xl border-l ${isNight ? "border-white/10 w-screen" : "border-gray-200 w-screen"}
             `}
           >
             {/* Header */}
