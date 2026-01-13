@@ -1,23 +1,16 @@
 import { motion } from "framer-motion";
-import {
-  Code,
-  Layout,
-  Server,
-  Monitor,
-  Smartphone,
-  Settings,
-} from "lucide-react";
 
 import ServiceCard from "./ServiceCard";
 import { services } from "../data/service";
 
 
 
-export default function Services() {
+export default function Services({ theme }) {
   return (
     <section
       id="services"
-      className="py-24 px-6 text-white"
+      className={`py-24 px-6 ${theme === "night" ? "text-white" : "text-black"
+        }`}
     >
       {/* Heading */}
       <motion.div
@@ -30,10 +23,14 @@ export default function Services() {
         <h2 className="text-4xl font-bold mb-4">
           Our <span className="text-indigo-400">Services</span>
         </h2>
-        <p className="text-gray-400">
+        <p
+          className={`${theme === "night" ? "text-gray-400" : "text-slate-600"
+            }`}
+        >
           We work small but think big, delivering scalable, secure and innovative
           digital solutions.
         </p>
+
       </motion.div>
 
       {/* Cards */}
@@ -43,6 +40,7 @@ export default function Services() {
             key={service.title}
             {...service}
             index={index}
+            theme={theme}
           />
         ))}
       </div>

@@ -1,17 +1,19 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { motion } from "framer-motion";
+import AOS from "aos";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation"; // ✅ Import navigation styles
 import AnimatedText from "./AnimatedText";
+import { useEffect } from "react";
 
 const slides = [
   {
     title: "IT Solutions for Modern Businessss",
     desc: "We build scalable, secure and high-performance digital products.",
-    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
+    image: "https://images.unsplash.com/photo-1556761175-4b46a572b786",
   },
   {
     title: "Web & Mobile App Development",
@@ -21,14 +23,22 @@ const slides = [
   {
     title: "Cloud & Enterprise Services",
     desc: "Transform your infrastructure with cloud-ready solutions.",
-    image: "https://images.unsplash.com/photo-1556761175-4b46a572b786",
+    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
   },
 ];
 
 export default function HeroCarousel() {
+  useEffect(() => {
+      AOS.init({
+        once: true,
+        duration: 600,
+        easing: "ease-out",
+      });
+      AOS.refresh();
+    }, []);
   return (
-    <div className="pt-16 w-full" id="home">
-      <div className="relative overflow-hidden h-[50vh] sm:h-[60vh] md:h-[70vh]">
+    <div className="pt-16 w-full" id="home" data-aos="zoom-in">
+      <div className="relative overflow-hidden h-[50vh] sm:h-[60vh] md:h-[80vh]">
         <Swiper
           modules={[Autoplay, Pagination, Navigation]} // ✅ Add Navigation module
           autoplay={{ delay: 5000, disableOnInteraction: false }}

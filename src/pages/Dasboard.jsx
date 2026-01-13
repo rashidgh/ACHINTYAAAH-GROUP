@@ -1,25 +1,34 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
-import HeroCarousel from '../components/HeroCarosel'
-import Services from '../components/Services'
-import ContactUs from '../components/ContactUs'
-import OurClients from '../components/OurClients'
-import AboutUs from '../components/AboutUs'
-import ScrollToTop from '../components/ScrollToTop'
-import Footer from '../components/Footer'
+import React from "react";
+import Navbar from "../components/Navbar";
+import HeroCarousel from "../components/HeroCarosel";
+import Services from "../components/Services";
+import ContactUs from "../components/ContactUs";
+import OurClients from "../components/OurClients";
+import AboutUs from "../components/AboutUs";
+import ScrollToTop from "../components/ScrollToTop";
+import useTheme from "../hooks/useTheme";
 
-const Dasboard = () => {
-    return (
-        <div className='bg-gradient-to-b from-slate-950 via-slate-900 to-black'>
-            <Navbar />
-            <HeroCarousel/>÷
-            <OurClients/>
-            <Services/>
-            <AboutUs/>
-            <ContactUs/>
-            <ScrollToTop/>
-        </div>
-    )
-}
+const Dashboard = () => {
+  const [theme, setTheme] = useTheme(); // ✅ SINGLE SOURCE
 
-export default Dasboard;
+  return (
+    <div
+      className={`min-h-screen transition-colors duration-300 ${
+        theme === "night"
+          ? "bg-gradient-to-b from-slate-950 via-slate-900 to-black text-white"
+          : "bg-white text-black"
+      }`}
+    >
+      <Navbar theme={theme} setTheme={setTheme} />
+
+      <HeroCarousel />
+      <OurClients />
+      <Services theme={theme} />
+      <AboutUs theme={theme} />
+      <ContactUs theme={theme} />
+      <ScrollToTop />
+    </div>
+  );
+};
+
+export default Dashboard;
