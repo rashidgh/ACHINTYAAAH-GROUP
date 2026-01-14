@@ -9,7 +9,7 @@ export default function Services({ theme }) {
   return (
     <section
       id="services"
-      className={`py-24 px-6 ${theme === "night" ? "text-white" : "text-black"
+      className={`pb-24 px-6 ${theme === "night" ? "text-white" : "text-black"
         }`}
     >
       {/* Heading */}

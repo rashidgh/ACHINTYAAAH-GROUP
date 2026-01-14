@@ -33,7 +33,7 @@ export default function AboutUs({ theme }) {
       )}
 
       {/* HERO */}
-      <div className="relative py-16 text-center">
+      <div className="relative text-center">
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
           About{" "}
           <span className={isDay ? "text-indigo-600" : "text-indigo-400"}>
@@ -46,7 +46,7 @@ export default function AboutUs({ theme }) {
       </div>
 
       {/* WHO WE ARE */}
-      <div className="relative max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <div className="relative max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         {/* IMAGE */}
         <div
           data-aos={window.innerWidth >= 768 ? "zoom-in" : "fade-left"}
@@ -90,7 +90,7 @@ export default function AboutUs({ theme }) {
       </div>
 
       {/* CORE VALUES */}
-      <div className="relative py-28">
+      <div className="relative pb-28">
         <h2 className="text-center text-3xl font-bold mb-20">
           Our{" "}
           <span className={isDay ? "text-indigo-600" : "text-indigo-400"}>

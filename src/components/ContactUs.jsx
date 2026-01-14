@@ -26,10 +26,10 @@ export default function ContactUs({ theme }) {
     <section
       id="contact"
       className={`
-        relative min-h-screen px-6 pt-24
+        relative min-h-screen px-6 
         ${isNight
           ? "bg-gradient-to-b from-slate-950 via-slate-900 to-black text-white"
-          : "bg-slate-50 text-slate-900"}
+          : "bg-white"}
       `}
     >
       {/* TITLE */}
