@@ -3,7 +3,8 @@ import ClientLogo from "./ClientLogo";
 import { clients } from "../data/client";
 
 
-export default function OurClients() {
+export default function OurClients({theme}) {
+  const isNight = theme === "night";
   return (
     <section className="py-24  overflow-hidden mt-[-24px] ">
       {/* Title */}
@@ -12,9 +13,11 @@ export default function OurClients() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-center text-3xl font-semibold tracking-widest mb-16 text-white"
+        className={`text-center text-3xl font-semibold tracking-widest mb-16 ${isNight ? "text-white" : "text-gray-900"}`}
       >
-        OUR CLIENT
+        <h2 className="text-4xl font-bold mb-4">
+          Our <span className="text-indigo-400">Clients</span>
+        </h2>
       </motion.h2>
 
       {/* Slider */}

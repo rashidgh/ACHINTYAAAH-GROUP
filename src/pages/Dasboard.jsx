@@ -22,7 +22,7 @@ const Dashboard = () => {
       <Navbar theme={theme} setTheme={setTheme} />
 
       <HeroCarousel />
-      <OurClients />
+      <OurClients theme={theme} />
       <Services theme={theme} />
       <AboutUs theme={theme} />
       <ContactUs theme={theme} />
