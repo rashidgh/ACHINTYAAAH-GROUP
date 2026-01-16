@@ -11,7 +11,7 @@ import { useEffect } from "react";
 
 const slides = [
   {
-    title: "IT Solutions for Modern Businessss",
+    title: "IT Solutions for Modern Business",
     desc: "We build scalable, secure and high-performance digital products.",
     image: "https://images.unsplash.com/photo-1556761175-4b46a572b786",
   },
