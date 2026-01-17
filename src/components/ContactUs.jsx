@@ -8,16 +8,17 @@ const contacts = [
     role: "Business Head",
     email: "sourav@achintyaaah.com",
     phone: "+91 9148094352",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/sourav-s-8409661ba/", // example
   },
   {
     name: "Karthik S",
     role: "Technical Lead",
     email: "karthik@achintyaaah.com",
-    phone: "+91 9886493060",
-    linkedin: "#",
+    phone: "+91 988649306",
+    linkedin: "https://www.linkedin.com/in/achintyaah-group-867851393/?originalSubdomain=in", // example
   },
 ];
+
 
 export default function ContactUs({ theme }) {
   const isNight = theme === "night";
@@ -81,39 +82,48 @@ export default function ContactUs({ theme }) {
                 </h3>
 
                 <p
-                  className={`text-sm mb-3 ${
-                    isNight ? "text-indigo-400" : "text-indigo-600"
-                  }`}
+                  className={`text-sm mb-3 ${isNight ? "text-indigo-400" : "text-indigo-600"
+                    }`}
                 >
                   {person.role}
                 </p>
 
                 <div
-                  className={`flex flex-col gap-2 text-sm ${
-                    isNight ? "text-slate-300" : "text-slate-600"
-                  }`}
+                  className={`flex flex-col gap-2 text-sm ${isNight ? "text-slate-300" : "text-slate-600"
+                    }`}
                 >
-                  <span className="flex items-center gap-2">
+                  <a
+                    href={`mailto:${person.email}`}
+                    className="flex items-center gap-2 hover:underline"
+                  >
                     <Mail size={16} /> {person.email}
-                  </span>
-                  <span className="flex items-center gap-2">
+                  </a>
+
+                  <a
+                    href={`tel:${person.phone.replace(/\s+/g, "")}`}
+                    className="flex items-center gap-2 hover:underline"
+                  >
                     <Phone size={16} /> {person.phone}
-                  </span>
+                  </a>
                 </div>
+
               </div>
 
               {/* RIGHT ICON */}
               <a
                 href={person.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`
-                  w-12 h-12 rounded-full flex items-center justify-center transition
-                  ${isNight
+    w-12 h-12 rounded-full flex items-center justify-center transition
+    ${isNight
                     ? "border border-slate-700 text-slate-300 hover:border-indigo-400 hover:text-indigo-400"
                     : "border border-slate-300 text-slate-600 hover:border-indigo-500 hover:text-indigo-600"}
-                `}
+  `}
               >
                 <Linkedin size={20} />
               </a>
+
             </motion.div>
           ))}
         </motion.div>
@@ -157,9 +167,8 @@ export default function ContactUs({ theme }) {
                   {item.title}
                 </p>
                 <p
-                  className={`leading-relaxed ${
-                    isNight ? "text-slate-300" : "text-slate-600"
-                  }`}
+                  className={`leading-relaxed ${isNight ? "text-slate-300" : "text-slate-600"
+                    }`}
                 >
                   {item.text}
                 </p>
@@ -171,7 +180,7 @@ export default function ContactUs({ theme }) {
 
       {/* FOOTER */}
       <div className="mt-36">
-        <Footer theme={theme} /> 
+        <Footer theme={theme} />
       </div>
     </section>
   );

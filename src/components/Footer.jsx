@@ -65,9 +65,8 @@ export default function Footer({ theme }) {
               <li
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`cursor-pointer flex items-center gap-2 transition-colors duration-300 ${
-                  isNight ? "text-gray-300 hover:text-indigo-400" : "text-gray-600 hover:text-indigo-500"
-                }`}
+                className={`cursor-pointer flex items-center gap-2 transition-colors duration-300 ${isNight ? "text-gray-300 hover:text-indigo-400" : "text-gray-600 hover:text-indigo-500"
+                  }`}
               >
                 <ArrowUpRight size={14} />
                 {item.label}
@@ -101,32 +100,62 @@ export default function Footer({ theme }) {
         >
           <h4 className={`font-semibold mb-4 ${isNight ? "text-white" : "text-gray-900"}`}>Contact</h4>
           <div className={isNight ? "space-y-3 text-gray-300" : "space-y-3 text-gray-600"}>
-            <p className="flex items-center gap-2">
+            <a
+              href="mailto:hello@achintyaaah.com"
+              className="flex items-center gap-2 hover:underline"
+            >
               <Mail size={16} /> hello@achintyaaah.com
-            </p>
-            <p className="flex items-center gap-2">
-              <Phone size={16} /> +91 90000 00000
-            </p>
+            </a>
+
+            <a
+              href="tel:+919000000000"
+              className="flex items-center gap-2 hover:underline"
+            >
+              <Phone size={16} /> +91 9148094352
+            </a>
           </div>
+
 
           {/* Social Icons */}
           <div className="flex gap-4 mt-6">
-            {[Linkedin, Mail, Phone].map((Icon, idx) => (
+            {[
+              {
+                Icon: Linkedin,
+                link: "https://www.linkedin.com/in/achintyaah-group-867851393/?originalSubdomain=in",
+                external: true,
+              },
+              {
+                Icon: Mail,
+                link: "mailto:sourav@achintyaaah.com",
+                external: false,
+              },
+              {
+                Icon: Phone,
+                link: "tel:+919148094352",
+                external: false,
+              },
+            ].map(({ Icon, link, external }, idx) => (
               <motion.a
                 key={idx}
                 whileHover={{ scale: 1.15, y: -2 }}
-                href="#"
+                href={link}
+                {...(external && {
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                })}
                 className={`
-                  w-10 h-10 rounded-full flex items-center justify-center border transition-colors duration-300
-                  ${isNight
+        w-10 h-10 rounded-full flex items-center justify-center border transition-colors duration-300
+        ${isNight
                     ? "border-white/10 text-gray-300 hover:border-indigo-400 hover:text-indigo-400"
-                    : "border-gray-300 text-gray-600 hover:border-indigo-500 hover:text-indigo-500"}
-                `}
+                    : "border-gray-300 text-gray-600 hover:border-indigo-500 hover:text-indigo-500"
+                  }
+      `}
               >
                 <Icon size={18} />
               </motion.a>
             ))}
           </div>
+
         </motion.div>
       </div>
 
@@ -136,9 +165,8 @@ export default function Footer({ theme }) {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ delay: 0.6 }}
-        className={`relative mt-16 pt-6 text-center text-xs border-t transition-colors duration-300 ${
-          isNight ? "border-white/10 text-gray-400" : "border-gray-200 text-gray-500"
-        }`}
+        className={`relative mt-16 pt-6 text-center text-xs border-t transition-colors duration-300 ${isNight ? "border-white/10 text-gray-400" : "border-gray-200 text-gray-500"
+          }`}
       >
         © 2025 ACHINTYAAAH GROUP. All rights reserved.
       </motion.div>
