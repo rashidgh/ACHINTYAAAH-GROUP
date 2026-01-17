@@ -1,8 +1,12 @@
 @import "tailwindcss";
-/* Force smaller Swiper arrows */
-body{
-  overflow-x: hidden;
+
+/* Fix horizontal scrolling on mobile */
+html,
+body {
+  overflow-x: hidden !important;
+  width: 100% !important;
 }
+
 .swiper-button-next,
 .swiper-button-prev {
   width: 28px !important;
@@ -48,6 +52,7 @@ body{
 
 /* Hide arrows on mobile */
 @media (max-width: 768px) {
+
   .swiper-button-next,
   .swiper-button-prev {
     display: flex !important;
@@ -62,4 +67,3 @@ body{
 }
 
 /* <div className="relative overflow-hidden h-[50vh] sm:h-[60vh] md:h-[70vh]"> */
-

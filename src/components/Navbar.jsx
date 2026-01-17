@@ -43,7 +43,7 @@ export default function Navbar({ theme, setTheme }) {
   return (
     <nav
       className={`
-        fixed top-0 left-0 z-50 transition-colors duration-300 w-screen
+        fixed top-0 left-0 z-50 transition-colors duration-300 w-full
         ${isNight ? "bg-[#0B0F1A]/90 text-white backdrop-blur-lg" : "bg-white/90 text-gray-800 backdrop-blur-md shadow-md"}
       `}
     >
@@ -114,86 +114,83 @@ export default function Navbar({ theme, setTheme }) {
 
       {/* Mobile Menu with Backdrop */}
       <AnimatePresence>
-  {open && (
-    <>
-      {/* Backdrop */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.6 }}
-        exit={{ opacity: 0 }}
-        className="fixed inset-0 bg-black z-40"
-        onClick={() => setOpen(false)}
-      />
+        {open && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.6 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black z-40"
+              onClick={() => setOpen(false)}
+            />
 
-      {/* Sidebar */}
-      <motion.div
-        initial={{ x: "110%" }}
-        animate={{ x: 0 }}
-        exit={{ x: "110%" }}
-        transition={{ duration: 0.35, ease: "easeOut" }}
-        className={`
+            {/* Sidebar */}
+            <motion.div
+              initial={{ x: "110%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "110%" }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
+              className={`
           fixed top-0 right-0 h-screen w-screen z-50
           ${isNight ? "bg-[#0B0F1A] text-white" : "bg-white text-gray-800"}
           shadow-2xl
           overflow-hidden
         `}
-      >
-        {/* Scrollable Content */}
-        <div className="h-full flex flex-col p-6 overflow-y-auto">
-          
-          {/* Header */}
-          <div className="flex items-center justify-between mb-8">
-            <button
-              onClick={toggleTheme}
-              className={`p-2 rounded-full ${
-                isNight
-                  ? "bg-white/10 hover:bg-white/20"
-                  : "bg-gray-100 hover:bg-gray-200"
-              }`}
             >
-              {isNight ? <Sun size={18} /> : <Moon size={18} />}
-            </button>
+              {/* Scrollable Content */}
+              <div className="h-full flex flex-col p-6 overflow-y-auto">
 
-            <button
-              onClick={() => setOpen(false)}
-              className={`p-2 rounded-full ${
-                isNight
-                  ? "bg-white/10 hover:bg-white/20"
-                  : "bg-gray-100 hover:bg-gray-200"
-              }`}
-            >
-              <X size={20} />
-            </button>
-          </div>
+                {/* Header */}
+                <div className="flex items-center justify-between mb-8">
+                  <button
+                    onClick={toggleTheme}
+                    className={`p-2 rounded-full ${isNight
+                        ? "bg-white/10 hover:bg-white/20"
+                        : "bg-gray-100 hover:bg-gray-200"
+                      }`}
+                  >
+                    {isNight ? <Sun size={18} /> : <Moon size={18} />}
+                  </button>
 
-          {/* Menu */}
-          <div className="flex flex-col divide-y">
-            {navItems.map((item) => (
-              <button
-                key={item.hash}
-                onClick={() => handleClick(item.hash)}
-                className={`py-4 px-3 text-left text-lg rounded-xl transition
-                  ${
-                    active === item.hash
-                      ? isNight
-                        ? "text-indigo-400 bg-white/5"
-                        : "text-indigo-600 bg-gray-100"
-                      : isNight
-                        ? "hover:bg-white/10"
-                        : "hover:bg-gray-200"
-                  }
+                  <button
+                    onClick={() => setOpen(false)}
+                    className={`p-2 rounded-full ${isNight
+                        ? "bg-white/10 hover:bg-white/20"
+                        : "bg-gray-100 hover:bg-gray-200"
+                      }`}
+                  >
+                    <X size={20} />
+                  </button>
+                </div>
+
+                {/* Menu */}
+                <div className="flex flex-col divide-y">
+                  {navItems.map((item) => (
+                    <button
+                      key={item.hash}
+                      onClick={() => handleClick(item.hash)}
+                      className={`py-4 px-3 text-left text-lg rounded-xl transition
+                  ${active === item.hash
+                          ? isNight
+                            ? "text-indigo-400 bg-white/5"
+                            : "text-indigo-600 bg-gray-100"
+                          : isNight
+                            ? "hover:bg-white/10"
+                            : "hover:bg-gray-200"
+                        }
                 `}
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
 
-        </div>
-      </motion.div>
-    </>
-  )}
-</AnimatePresence>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
 
     </nav>
   );

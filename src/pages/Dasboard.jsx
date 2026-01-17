@@ -13,11 +13,10 @@ const Dashboard = () => {
 
   return (
     <div
-      className={`min-h-screen w-screen transition-colors duration-300 ${
-        theme === "night"
+      className={`min-h-screen w-full overflow-x-hidden transition-colors duration-300 ${theme === "night"
           ? "bg-gradient-to-b from-slate-950 via-slate-900 to-black text-white"
           : "bg-white text-black"
-      }`}
+        }`}
     >
       <Navbar theme={theme} setTheme={setTheme} />
 
