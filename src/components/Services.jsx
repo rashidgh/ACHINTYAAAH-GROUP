@@ -38,11 +38,14 @@ export default function Services({ theme }) {
         {services.map((service, index) => (
           <ServiceCard
             key={service.title}
-            {...service}
-            index={index}
+            icon={service.icon}
+            title={service.title}
+            shortDescription={service.shortDescription}
+            service={service}
             theme={theme}
           />
         ))}
+
       </div>
     </section>
   );

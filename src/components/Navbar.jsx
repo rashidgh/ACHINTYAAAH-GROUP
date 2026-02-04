@@ -54,7 +54,7 @@ export default function Navbar({ theme, setTheme }) {
           className={`flex items-center gap-2 text-lg font-bold cursor-pointer ${isNight ? "text-white" : "text-gray-900"}`}
         >
           <img className="rounded-full" src="/logo.jpeg" alt="Logo" width={36} />
-          ACHINTYAAAH <span className={isNight ? "text-indigo-400" : "text-indigo-500"}>GROUP</span>
+          ACHINTYAAAH <span className={isNight ? "text-indigo-400" : "text-indigo-500"}>PROJECT</span>
         </div>
 
         {/* Desktop Menu */}
@@ -92,7 +92,7 @@ export default function Navbar({ theme, setTheme }) {
           <button
             onClick={toggleTheme}
             className={`
-              ml-4 p-2 rounded-full transition
+              ml-4 p-2 cursor-pointer rounded-full transition
               ${isNight ? "bg-white/10 text-white hover:bg-white/20" : "bg-gray-100 text-gray-800 hover:bg-gray-200"}
             `}
           >
@@ -145,7 +145,7 @@ export default function Navbar({ theme, setTheme }) {
                 <div className="flex items-center justify-between mb-8">
                   <button
                     onClick={toggleTheme}
-                    className={`p-2 rounded-full ${isNight
+                    className={`p-2  rounded-full ${isNight
                         ? "bg-white/10 hover:bg-white/20"
                         : "bg-gray-100 hover:bg-gray-200"
                       }`}

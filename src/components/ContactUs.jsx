@@ -4,20 +4,15 @@ import Footer from "./Footer";
 
 const contacts = [
   {
-    name: "Sourav S",
-    role: "Business Head",
-    email: "sourav@achintyaaah.com",
-    phone: "+91 9148094352",
-    linkedin: "https://www.linkedin.com/in/sourav-s-8409661ba/", // example
-  },
-  {
-    name: "Karthik S",
-    role: "Technical Lead",
-    email: "karthik@achintyaaah.com",
-    phone: "+91 988649306",
-    linkedin: "https://www.linkedin.com/in/achintyaah-group-867851393/?originalSubdomain=in", // example
-  },
+    name: "Achintyaah Group",
+    role: "Official Business Contact",
+    email: "info@achintyaahgroup.com",
+    phone: "+91 91480 94352",
+    linkedin: "https://www.linkedin.com/in/achintyaah-group-867851393/?originalSubdomain=in",
+    description: "Reach out to us for business inquiries, partnerships, project discussions, or general questions. Our team responds promptly and professionally. We focus on understanding your requirements in detail to provide clear guidance and effective solutions. At Achintyaah Group, we value long-term collaboration and are committed to supporting your business goals with reliability and transparency."
+  }
 ];
+
 
 
 export default function ContactUs({ theme }) {
@@ -66,17 +61,20 @@ export default function ContactUs({ theme }) {
                 hidden: { opacity: 0, x: -40 },
                 visible: { opacity: 1, x: 0 },
               }}
-              whileHover={{ y: -6, scale: 1.02 }}
+              whileHover={{ y: -6 }}
               transition={{ type: "spring", stiffness: 200 }}
               className={`
-                group relative flex items-center justify-between gap-6 rounded-xl p-6 transition-all
-                ${isNight
+    group relative flex flex-col lg:flex-row
+    items-start lg:items-center
+    justify-between gap-6
+    rounded-xl p-6 transition-all
+    ${isNight
                   ? "bg-white/5 backdrop-blur-md border border-white/10 hover:border-indigo-400/50 shadow-lg"
                   : "bg-white border border-slate-200 hover:border-indigo-500 shadow-md hover:shadow-xl"}
-              `}
+  `}
             >
               {/* LEFT INFO */}
-              <div>
+              <div className="w-full">
                 <h3 className="text-xl font-semibold">
                   {person.name}
                 </h3>
@@ -88,43 +86,40 @@ export default function ContactUs({ theme }) {
                   {person.role}
                 </p>
 
-                <div
-                  className={`flex flex-col gap-2 text-sm ${isNight ? "text-slate-300" : "text-slate-600"
+                <p
+                  className={`text-sm mb-5 leading-relaxed ${isNight ? "text-slate-400" : "text-slate-600"
                     }`}
                 >
-                  <a
-                    href={`mailto:${person.email}`}
-                    className="flex items-center gap-2 hover:underline"
-                  >
-                    <Mail size={16} /> {person.email}
-                  </a>
+                  {person.description}
+                </p>
 
-                  <a
-                    href={`tel:${person.phone.replace(/\s+/g, "")}`}
-                    className="flex items-center gap-2 hover:underline"
-                  >
-                    <Phone size={16} /> {person.phone}
-                  </a>
-                </div>
-
+                <a
+                  href={`mailto:${person.email}`}
+                  className={`flex items-center gap-2 text-sm hover:underline ${isNight ? "text-slate-300" : "text-indigo-600"
+                    }`}
+                >
+                  <Mail size={16} /> {person.email}
+                </a>
               </div>
 
-              {/* RIGHT ICON */}
+              {/* RIGHT – LINKEDIN */}
               <a
                 href={person.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`
-    w-12 h-12 rounded-full flex items-center justify-center transition
-    ${isNight
+      h-12 mt-4 lg:mt-0
+      rounded-full flex items-center justify-center gap-2 transition p-4
+      ${isNight
                     ? "border border-slate-700 text-slate-300 hover:border-indigo-400 hover:text-indigo-400"
                     : "border border-slate-300 text-slate-600 hover:border-indigo-500 hover:text-indigo-600"}
-  `}
+    `}
               >
                 <Linkedin size={20} />
+                {/* <span className="text-sm font-medium">Connect on LinkedIn</span> */}
               </a>
-
             </motion.div>
+
           ))}
         </motion.div>
 

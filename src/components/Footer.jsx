@@ -101,18 +101,12 @@ export default function Footer({ theme }) {
           <h4 className={`font-semibold mb-4 ${isNight ? "text-white" : "text-gray-900"}`}>Contact</h4>
           <div className={isNight ? "space-y-3 text-gray-300" : "space-y-3 text-gray-600"}>
             <a
-              href="mailto:hello@achintyaaah.com"
+              href="mailto:info@achintyaahgroup.com"
               className="flex items-center gap-2 hover:underline"
             >
-              <Mail size={16} /> hello@achintyaaah.com
+              <Mail size={16} /> info@achintyaahgroup.com
             </a>
 
-            <a
-              href="tel:+919000000000"
-              className="flex items-center gap-2 hover:underline"
-            >
-              <Phone size={16} /> +91 9148094352
-            </a>
           </div>
 
 
@@ -128,12 +122,7 @@ export default function Footer({ theme }) {
                 Icon: Mail,
                 link: "mailto:sourav@achintyaaah.com",
                 external: false,
-              },
-              {
-                Icon: Phone,
-                link: "tel:+919148094352",
-                external: false,
-              },
+              }
             ].map(({ Icon, link, external }, idx) => (
               <motion.a
                 key={idx}
